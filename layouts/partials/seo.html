@@ -1,0 +1,37 @@
+{{- $title := .Title | default site.Title -}}
+<title>{{ $title }}</title>
+{{ with .Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+<link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:title" content="{{ $title }}">
+{{ with .Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Params.featured_image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Charlotte Stormwater",
+  "url": "https://charlottestormwater.com/",
+  "telephone": "+1-980-613-0602",
+  "address": {
+    "@type": "5015 West WT Harris Blvd",
+    "addressLocality": "Charlotte",
+    "addressRegion": "NC",
+    "postalCode": "28209",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Charlotte Metro","Mecklenburg County","Huntersville","Matthews","Pineville"],
+  "knowsAbout": [
+    "SCM/BMP inspections",
+    "NPDES sampling",
+    "SWPPP",
+    "SPCC",
+    "Sinkholes",
+    "Catch Basin Repair",
+    "Stormwater Pipe Replacement",
+    "Sump Pump & Lift Station Service"
+  ]
+}
+</script>

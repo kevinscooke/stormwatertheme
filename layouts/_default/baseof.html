@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{ partial "seo.html" . }}
+    {{ partial "analytics/head.html" . }}
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    {{ $styles := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.png">  
+  </head>
+  <body class="min-h-screen bg-gray-50 text-gray-900 flex flex-col">
+    {{ partial "header.html" . }}
+     {{ partial "analytics/body.html" . }}  {{/* GTM noscript only; safe for gtag */}}
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[1000] focus:bg-white focus:text-black focus:px-3 focus:py-2 focus:rounded">
+      Skip to content
+    </a>
+    <main class="flex-1">{{ block "main" . }}{{ end }}</main>
+    {{ partial "footer.html" . }}
+    {{ partial "analytics/events.html" . }} {{/* shared event helpers */}}
+  </body>
+</html>

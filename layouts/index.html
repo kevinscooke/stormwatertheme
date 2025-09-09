@@ -1,0 +1,86 @@
+{{ define "main" }}
+  <!-- Hero with background + gradient overlay -->
+  <section class="relative">
+    <!-- background image -->
+    <div class="absolute inset-0">
+      <div class="h-full bg-cover bg-center" style="background-image:url('/img/hero-home_dark.jpg');"></div>
+      <!-- darker gradient for legibility -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/60"></div>
+    </div>
+
+    <!-- content -->
+    <div class="relative mx-auto max-w-6xl px-4 py-16">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <!-- Left: headline & copy -->
+        <div class="text-white">
+          <h1 class="text-5xl font-extrabold leading-tight mb-4">Charlotte Stormwater</h1>
+          <p class="text-lg text-gray-100">
+            Regulatory inspections, maintenance, and retrofit construction—serving Charlotte Metro and surrounding areas.
+            Now also providing sump pump, lift station, and drainage system services.
+          </p>
+          <ul class="mt-5 list-disc list-inside space-y-1 text-gray-100">
+            <li>SCM/BMP inspections &amp; reports</li>
+            <li>Vegetation, sediment, and trash removal</li>
+            <li>Catch basin repair and sinkholes (karst)</li>
+            <li>Retrofits &amp; reconstructions</li>
+            <li>NPDES sampling, SWPPP &amp; SPCC plans</li>
+            <li>Sump pump &amp; lift-station maintenance and repair</li>
+            <li>Dock drains, French drains, footer &amp; foundation drains</li>
+          </ul>
+        </div>
+
+
+        <!-- Right: quote form (desktop 50%) -->
+        <div class="bg-white/95 rounded-2xl border p-6 shadow-lg">
+          {{ partial "cta-quote.html" . }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Services: full width below -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-3xl font-extrabold mb-6">Featured Services</h2>
+      <!-- Cool bullets under Featured Services (with icons + lorem ipsum) -->
+      <ul class="mt-8 grid gap-3 md:grid-cols-3">
+        <li class="flex items-start gap-3">
+          <!-- droplet icon -->
+          <svg class="h-5 w-5 mt-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C12 2 5 9 5 14a7 7 0 1 0 14 0c0-5-7-12-7-12z" />
+          </svg>
+          <span>Regulatory SCM/BMP inspections with fast, documentation reports.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="h-5 w-5 mt-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C12 2 5 9 5 14a7 7 0 1 0 14 0c0-5-7-12-7-12z" />
+          </svg>
+          <span>Emergency repairs, erosion control, inlet/outfall fixes.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="h-5 w-5 mt-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C12 2 5 9 5 14a7 7 0 1 0 14 0c0-5-7-12-7-12z" />
+          </svg>
+          <span>Sinkholes, catch-basin repairs, sump-pumps, natural spring drainage. </span>
+        </li>
+      </ul>
+      <br>
+      <div class="grid gap-4 md:grid-cols-3">
+        {{ range first 6 (where site.RegularPages "Section" "services") }}
+          <a href="{{ .RelPermalink }}" class="block rounded-2xl border p-5 hover:shadow-sm transition">
+            <div class="font-semibold">{{ .Title }}</div>
+            <div class="text-sm text-gray-600">{{ .Params.description }}</div>
+          </a>
+        {{ end }}
+      </div>
+
+      
+    </div>
+  </section>
+  
+  {{ partial "home-stats.html" . }}
+  {{ partial "home-process.html" . }}
+  {{ partial "home-local.html" . }}
+  {{ partial "home-testimonials.html" . }}
+  {{ partial "home-cta-schedule.html" . }}
+{{ end }}

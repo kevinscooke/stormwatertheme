@@ -1,0 +1,170 @@
+<header class="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-backdrop-blur:bg-white/80">
+  <!-- Top quick links row -->
+<div class="bg-gray-800 text-white text-sm">
+  <div class="mx-auto max-w-6xl px-4 py-1 flex justify-end gap-6">
+    <a href="https://RaleighStormwater.com" target="_blank" rel="noopener noreferrer" class="hover:text-gray-300">
+      Raleigh Stormwater
+    </a>
+    <a href="https://AtlantaStormwater.com" target="_blank" rel="noopener noreferrer" class="hover:text-gray-300">
+      Atlanta Stormwater
+    </a>
+  </div>
+</div>
+  <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    <!-- Brand -->
+    <a href="/" class="text-xl font-extrabold tracking-tight">Charlotte Stormwater</a>
+
+    <!-- Mobile toggle -->
+    <button id="navToggle"
+            class="md:hidden inline-flex items-center gap-2 rounded-lg border px-3 py-2"
+            aria-expanded="false" aria-controls="mobileOnly">
+      <span class="sr-only">Toggle menu</span>
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+
+    <!-- DESKTOP NAV -->
+    <nav class="hidden md:flex md:items-center md:gap-6">
+      <a href="/" class="hover:text-gray-900/80 {{ if .IsHome }}font-semibold{{ end }}">Home</a>
+
+      <!-- Services: link + hover dropdown -->
+      <div class="relative group">
+        <a href="/services/" class="inline-flex items-center gap-2 py-2 hover:text-gray-900/80">
+          Services
+          <svg class="h-4 w-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+          </svg>
+        </a>
+        <span class="pointer-events-none absolute left-0 top-full block h-2 w-80"></span>
+        <div class="absolute left-0 top-full z-[999] hidden w-80 rounded-2xl border bg-white p-2 shadow-md group-hover:block">
+          <a href="/services/industrial-stormwater-compliance-charlotte/" class="block rounded-xl px-4 py-3 hover:bg-gray-50">
+            <div class="text-sm font-semibold">Stormwater Inspections</div>
+            <div class="text-xs text-gray-600">Inspections and Compliance Consulting</div>
+          </a>
+          <a href="/services/catch-basin-repair-charlotte/" class="block rounded-xl px-4 py-3 hover:bg-gray-50">
+            <div class="text-sm font-semibold">Catch Basin Repair</div>
+            <div class="text-xs text-gray-600">Commercial inlet rebuilds & collars</div>
+          </a>
+          <a href="/services/stormwater-pipe-replacement-charlotte/" class="block rounded-xl px-4 py-3 hover:bg-gray-50">
+            <div class="text-sm font-semibold">Pipe Replacement</div>
+            <div class="text-xs text-gray-600">RCP/CMP/HDPE replacements & point repairs</div>
+          </a>
+          <a href="/services/sump-pump-lift-station-charlotte/" class="block rounded-xl px-4 py-3 hover:bg-gray-50">
+            <div class="text-sm font-semibold">Sump Pump & Lift Station</div>
+            <div class="text-xs text-gray-600">24/7 stormwater & sanitary pump service</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- About: link + hover dropdown (Regulations, Links, Environmental Services, PFAS) -->
+      <div class="relative group">
+        <a href="/about/" class="inline-flex items-center gap-2 py-2 hover:text-gray-900/80">
+          About
+          <svg class="h-4 w-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+          </svg>
+        </a>
+        <span class="pointer-events-none absolute left-0 top-full block h-2 w-80"></span>
+        <div class="absolute left-0 top-full z-[999] hidden w-80 rounded-2xl border bg-white p-2 shadow-md group-hover:block">
+          <a href="/regulations/" class="block rounded-xl px-4 py-3 hover:bg-gray-50">
+            <div class="text-sm font-semibold">Regulations</div>
+            <div class="text-xs text-gray-600">Local & state SCM/BMP requirements</div>
+          </a>
+          <a href="/links/" class="block rounded-xl px-4 py-3 hover:bg-gray-50">
+            <div class="text-sm font-semibold">Links</div>
+            <div class="text-xs text-gray-600">Helpful agency & resource links</div>
+          </a>
+          
+          <a href="/pfas/" class="block rounded-xl px-4 py-3 hover:bg-gray-50">
+            <div class="text-sm font-semibold">PFAS</div>
+            <div class="text-xs text-gray-600">Guidance & emerging regulations</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="/contact/" class="hover:text-gray-900/80">Contact</a>
+      <a href="tel:+19806130602" class="hidden md:inline-block rounded-lg border px-4 py-2">Call (980) 613-0602</a>
+    </nav>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <nav id="mobileOnly" class="md:hidden hidden border-t bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-3 space-y-3">
+      <a href="/" class="block py-1">Home</a>
+
+      <!-- Mobile Services accordion -->
+      <button id="mobileServicesTrigger"
+              class="w-full text-left py-2 font-semibold flex items-center justify-between"
+              aria-expanded="false" aria-controls="mobileServicesMenu">
+        Services
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+      <div id="mobileServicesMenu" class="hidden pl-3 space-y-2">
+        <a href="/services/industrial-stormwater-compliance-charlotte/" class="block">Stormwater Inspections</a>
+        <a href="/services/catch-basin-repair-charlotte/" class="block">Catch Basin Repair</a>
+        <a href="/services/stormwater-pipe-replacement-charlotte/" class="block">Pipe Replacement</a>
+        <a href="/services/sump-pump-lift-station-charlotte/" class="block">Sump Pump & Lift Station</a>
+      </div>
+      <a href="/services/" class="block py-1">All Services</a>
+
+      <!-- Mobile About accordion -->
+      <button id="mobileAboutTrigger"
+              class="w-full text-left py-2 font-semibold flex items-center justify-between"
+              aria-expanded="false" aria-controls="mobileAboutMenu">
+        About
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+      <div id="mobileAboutMenu" class="hidden pl-3 space-y-2">
+        <a href="/regulations/" class="block">Regulations</a>
+        <a href="/links/" class="block">Links</a>
+        <a href="/pfas/" class="block">PFAS</a>
+      </div>
+      <a href="/about/" class="block py-1">About Overview</a>
+
+      <a href="/contact/" class="block py-1">Contact</a>
+      <a href="tel:+19806130602" class="inline-block rounded-lg border px-4 py-2">Call (980) 613-0602</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile hamburger
+  (function () {
+    const toggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileOnly');
+    if (!toggle || !mobileNav) return;
+    toggle.addEventListener('click', () => {
+      const isHidden = mobileNav.classList.toggle('hidden');
+      toggle.setAttribute('aria-expanded', String(!isHidden));
+    });
+  })();
+
+  // Mobile Services accordion
+  (function () {
+    const t = document.getElementById('mobileServicesTrigger');
+    const m = document.getElementById('mobileServicesMenu');
+    if (!t || !m) return;
+    t.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isHidden = m.classList.toggle('hidden');
+      t.setAttribute('aria-expanded', String(!isHidden));
+    });
+  })();
+
+  // Mobile About accordion
+  (function () {
+    const t = document.getElementById('mobileAboutTrigger');
+    const m = document.getElementById('mobileAboutMenu');
+    if (!t || !m) return;
+    t.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isHidden = m.classList.toggle('hidden');
+      t.setAttribute('aria-expanded', String(!isHidden));
+    });
+  })();
+</script>

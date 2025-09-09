@@ -1,0 +1,19 @@
+<section class="mx-auto max-w-6xl px-4 py-16">
+  <div class="mb-6">
+    <h2 class="text-3xl font-extrabold">Testimonials</h2>
+    <p class="text-gray-600 text-sm">Real results across the Carolinas.</p>
+  </div>
+
+  <!-- Accessible horizontal scroll (no JS deps) -->
+  <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2">
+    {{ range .Site.Data.testimonials }}
+    <div class="snap-start min-w-[280px] max-w-sm shrink-0 rounded-2xl border bg-white p-6 shadow-sm">
+      <div class="flex mb-3" aria-label="5 star rating">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <p class="text-gray-800">“{{ .quote }}”</p>
+      <div class="mt-4 font-semibold">{{ .name }}</div>
+    </div>
+    {{ end }}
+  </div>
+</section>
