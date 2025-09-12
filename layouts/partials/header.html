@@ -12,7 +12,11 @@
 </div>
   <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
     <!-- Brand -->
-    <a href="/" class="text-xl font-extrabold tracking-tight">Charlotte Stormwater</a>
+    {{- $brand := .Site.Params.brand | default .Site.Title -}}
+      <a href="{{ "/" | relURL }}" class="text-xl font-extrabold tracking-tight">
+    {{ $brand }}
+      </a>
+
 
     <!-- Mobile toggle -->
     <button id="navToggle"
